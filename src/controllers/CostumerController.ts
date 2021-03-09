@@ -3,7 +3,7 @@ import jsonwebtoken from 'jsonwebtoken';
 
 import environment from '../configs/environment';
 
-class UserController {
+class CostumerController {
   async index(req: Request, res: Response) {
     return res.status(200).json({
       message: 'Hello World'
@@ -26,4 +26,4 @@ class UserController {
   }
 }
 
-export default new UserController();
+export default new CostumerController();

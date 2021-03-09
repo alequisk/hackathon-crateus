@@ -1,5 +1,4 @@
 import { createConnection } from 'typeorm';
-import path from 'path';
 import environment from '../../configs/environment';
 
 async function connect() {

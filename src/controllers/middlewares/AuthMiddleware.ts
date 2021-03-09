@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from 'express';
 import jsonwebtoken from 'jsonwebtoken'; 
 import environment from '../../configs/environment';
 
-
 class AuthMiddleware {
   async validate(req: Request, res: Response, next: NextFunction) {
     const { authorization } = req.headers;
