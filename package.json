@@ -13,7 +13,8 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/index.ts"
+    "dev": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/index.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",

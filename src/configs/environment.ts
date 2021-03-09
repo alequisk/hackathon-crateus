@@ -11,10 +11,10 @@ interface EnvironmentProps {
 const environment: EnvironmentProps = {
   port: 3001,
   jwt_secret: 'supersecrect',
-  db_host: 'locahost',
+  db_host: '127.0.0.1',
   db_port: 3306,
   db_user: 'root',
-  db_password: 'super-secret-password',
+  db_password: 'Kjr_9998-rotts',
   db_database: 'simpleauth'
 };
 

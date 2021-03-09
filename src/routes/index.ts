@@ -1,14 +1,13 @@
 import { Router } from 'express';
+import { getConnection } from 'typeorm';
 import CostumerRouter from './CostumersRoutes';
-
-import  connection from '../repositories/database/connection';
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
-  console.log(connection);
-  return res.status(200);
-});
+routes.get('/', (rr, rs) => {
+  console.log(getConnection());
+  return rs.send('ok');
+})
 
 routes.use(CostumerRouter);
 
