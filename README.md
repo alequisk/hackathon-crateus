@@ -43,6 +43,7 @@
 - [JSON Web Tokens](https://jwt.io/)
 - [UUID v4](https://www.uuidgenerator.net/version4)
 - [MySQL](https://www.mysql.com/)
+- [Docker] (https://www.docker.com/)
 - [TypeORM](https://typeorm.io/#/)
 
 ## 💻 Instalação, execução e desenvolvimento
@@ -60,14 +61,26 @@ Importe o `Insomnia.json` no Insomnia App ou click no botão [Run in Insomnia](#
 # Faça o downloald do projeto no seu computador
 $ git clone https://github.com/alequisk/hackathon-crateus
 
+# Crie um container docker com o mysql na versão 5
+sudo docker run --name mysql-server-5 -e MYSQL_ROOT_PASSWORD=<sua-senha> -dp 3306:3306 mysql:5
+
 # Entre na pasta raiz do projeto
 $ cd hackathon-crateus
 
 # Entre na pasta backend
 $ cd backend
 
-# Instale as dependências
-$ yarn
+# Instale as dependências do node
+$ yarn install
+
+# Modifique as os configurações do banco
+$ vim src/configs/environment.ts
+
+# Configure a cli do typeorm
+$ vim ormconfig.json
+
+# Rode as migrations do banco de dados
+$ yarn typeorm migration:run
 
 # Tudo pronto para iniciar o servidor
 $ yarn dev
@@ -80,7 +93,7 @@ $ yarn dev
 $ cd frontend
 
 # Instale as dependências
-$ yarn
+$ yarn install
 
 # Tudo pronto para iniciar a aplicação web
 $ yarn start
