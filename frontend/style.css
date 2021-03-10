@@ -7,6 +7,11 @@
     --green-pantone: #39a742ff;
     --light-slate-gray: #8491a3ff;
     --nyanza: rgb(232, 247, 230);
+    --phthalo-green: #132a13ff;
+    --hunter-green: #31572cff;
+    --sap-green: #4f772dff;
+    --olivine: #90a955ff;
+    --key-lime: #ecf39eff;
 }
 
 * {
@@ -228,26 +233,25 @@ header nav img {
 
 main .container-profile{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+   
 }
 
 main .container-profile .topo {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 main .container-profile .topo .aberto {
-    border: 1px solid black;
     padding: 0 10rem;
 }
 
 main .container-profile .topo .aberto h3, p {
     margin-top: 4%;
-    border: 1px solid black;
     margin-bottom: 4%;
 }
 
@@ -260,16 +264,123 @@ main .container-profile .topo .aberto .open {
     margin-top: 1%;
 }
 
+main .container-profile .topo .aberto .open:hover {
+    background: red;
+}
+
 
 main .container-profile .topo .copiar-link {
-    border: 1px solid black;
     padding: 0 8rem;
     display: flex;
     flex-direction: column;
 }
 
-main .container-profile .topo .copiar-link a {
+main .container-profile .topo .copiar-link input {
+    height: 2rem;
+    padding-left: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid gray;
+}
+
+main .container-profile .topo .copiar-link input, p {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+main .container-profile .topo .copiar-link .copy {
     padding: 0 10rem;
     background: rgb(8, 171, 221);
     color: white;
+    border: none;
+    border-radius: 0.25rem;
+    margin-top: 1%;
 }
+
+main .container-profile .bot {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+main .container-profile .bot .meus-produtos .new-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    margin-top: 2%;
+}
+main .container-profile .bot .meus-produtos .new-product a {
+    background: var(--hunter-green);
+    padding: 0 31rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    color: white;
+}
+
+.produtos {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 2%;
+    height: 8rem;
+    border-left: solid 3px var(--green-pantone);
+}
+
+.produtos a{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background: white;
+    width: 30%;
+}
+
+.produtos a:hover {
+    background: var(--mint-cream);
+    transform: 1s;
+}
+
+.produtos .produto-imagem img {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 3rem;
+}
+
+.produtos .produto-nome p {
+    color: black;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    padding: 0 1.5rem;
+    margin-top: 1%;
+}
+
+.acoes .editar {
+    margin-right: 1rem;
+    background-color: rgb(209, 209, 38);
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+    border: solid 1px gray;
+}
+
+.acoes .editar a {
+    color: white;
+}
+
+.acoes .excluir {
+    margin-right: 1rem;
+    background-color: red;
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+    border: solid 1px gray;
+}
+
+.acoes .excluir a {
+    color: white;
+}
+
+

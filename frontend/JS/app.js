@@ -9,22 +9,31 @@ function addProducts(id, name, price, quantity) {
 class editProduct {
   constructor(props) {
     super(props);
-    this.state = { id: "", name: "", price: "" };
+    this.state = { id: "", name: "", price: "", descrition: "", quantity:"" };
     this.setId = this.setId.bind(this);
     this.setName = this.setName.bind(this);
     this.setPrice = this.setPrice.bind(this);
+    this.setDescription = this.setDescription.bind(this);
+    this.setQuantity = this.setQuantity.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  setid(e) {
+  setId(e) {
     this.setState({ id: e.target.value });
   }
-  setname(e) {
+  setName(e) {
     this.setState({ name: e.target.value });
   }
-  setCapacidade(e) {
+  setPrice(e) {
     this.setState({ price: e.target.value });
   }
+  setDescription(e) {
+    this.setState({ description: e.target.value});
+  }
+  setQuantity(e) {
+    this.setState({ quantity: e.target.value});
+  }
+
   componentDidMount() {
     axios
       .get("" + this.props.match.params.id)
@@ -33,6 +42,8 @@ class editProduct {
           id: response.data.id,
           name: response.data.name,
           price: response.data.price,
+          description: response.data.price,
+          quantity: response.data.quantity,
         });
       })
       .catch((error) => {
@@ -45,6 +56,8 @@ class editProduct {
       id: this.state.id,
       name: this.state.name,
       price: this.state.price,
+      description: this.state.descrition,
+      quantity: this.state.descrition,
     };
     axios
       .put(
