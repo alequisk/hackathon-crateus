@@ -383,4 +383,96 @@ main .container-profile .bot .meus-produtos .new-product a {
     color: white;
 }
 
+.comercios {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 2%;
+    height: 8rem;
+    border-left: solid 3px var(--green-pantone);
+}
 
+.comercios a{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background: white;
+    width: 90%;
+}
+
+.comercios a:hover {
+    background: var(--mint-cream);
+    transform: 1s;
+}
+
+.comercios .comercio-imagem img {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 3rem;
+}
+
+.comercios .comercio-nome p {
+    color: black;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.comercios .comercio-nome .title{
+    font-size: 1.5rem;
+}
+
+.comercios .comercio-nome .horario{
+    color: var(--green-pantone)
+}
+
+.comercios .comercio-nome .frete{
+    color: var(--green-pantone)
+}
+
+.produtos {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 2%;
+    height: 8rem;
+    border-left: 0px;
+}
+
+.produtos a{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background: white;
+    width: 30%;
+    margin-left: 1%;
+    border-left: solid 3px var(--green-pantone);
+}
+
+.produtos a:hover {
+    background: var(--mint-cream);
+    transform: 1s;
+}
+
+.produtos .produto-imagem img {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 3rem;
+}
+
+.comercios .produto-nome p {
+    color: black;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.comercios .produto-nome .title{
+    font-size: 1.5rem;
+}
+
+.comercios .produto-nome .horario{
+    color: var(--green-pantone)
+}
+
+.comercios .produto-nome .frete{
+    color: var(--green-pantone)
+}
