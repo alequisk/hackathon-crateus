@@ -7,12 +7,6 @@ import Address from '../repositories/entities/Address';
 import Costumer from '../repositories/entities/Costumer';
 
 class CostumerController {
-  async index(req: Request, res: Response) {
-    return res.status(200).json({
-      message: 'Hello World'
-    });
-  }
-
   async fetch(req: Request, res: Response) {
     try {
       const { id } = req.params;

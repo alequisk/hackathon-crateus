@@ -5,6 +5,7 @@ import jsonwebtoken from 'jsonwebtoken';
 import Address from '../repositories/entities/Address';
 import Company from '../repositories/entities/Company';
 import environment from '../configs/environment';
+import Product from '../repositories/entities/Product';
 
 class CompaniesController {
   async create(request: Request, response: Response) {
@@ -72,6 +73,51 @@ class CompaniesController {
       return res.status(400).json({
         signed: false,
         message: err.message || 'Unexpected error'
+      });
+    }
+  }
+
+  async changeAvatar(req: Request, res: Response) {
+    try {
+      const { id, permission } = req.body.token_data;
+      const company = await Company.findOne(id);
+      if (company && permission === 'company') {
+        company.avatar = req.file.filename;
+        await company.save();
+        return res.status(200).json(company);
+      } else {
+        return res.status(400).json({
+          message: 'Invalid token | No company exists'
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        message: err.message || 'Unexpected Error'
+      });
+    }
+  }
+
+  async listProducts(req: Request, res: Response) {
+    try {
+      const { id, permission } = req.body.token_data;
+      if (permission === 'company') {
+
+        const products = await getConnection()
+        .getRepository(Product)
+        .createQueryBuilder('products')
+        .innerJoin('products.company', 'company')
+        .where('products.company_id = :id', { id: id })
+        .getMany();
+
+        return res.status(200).json(products);
+      } else {
+        return res.status(400).json({
+          message: 'Invalid token | No company exists'
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        message: err.message || 'Unexpected Error'
       });
     }
   }

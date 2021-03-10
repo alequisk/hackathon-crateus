@@ -37,9 +37,27 @@ class ProductsController {
       return res.status(400).json({ message: err.message || 'Unexpected error!' });
     }
   }
-  async list() {
 
+  async changeAvatar(req: Request, res: Response) {
+    try {
+      const { id, permission } = req.body.token_data;
+      const product = await Product.findOneOrFail(id);
+      if (product && permission === 'company') {
+        product.avatar = req.file.filename;
+        await product.save();
+        return res.status(200).json(product);
+      } else {
+        return res.status(400).json({
+          message: 'Invalid token | No company exists'
+        });
+      }
+    } catch (err) {
+      return res.status(500).json({
+        message: err.message || 'Unexpected Error'
+      });
+    }
   }
+
 };
 
 export default new ProductsController();

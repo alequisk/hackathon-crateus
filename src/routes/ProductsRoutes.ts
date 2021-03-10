@@ -7,6 +7,7 @@ import multerConfigs from '../configs/multer';
 
 const router = Router();
 
-router.post('/products', AuthMiddleware.validate, multer(multerConfigs).single('avatar'), ProductsController.create);
+router.post('/products', AuthMiddleware.validate, ProductsController.create);
+router.put('/products/avatar',  multer(multerConfigs).single('avatar'), AuthMiddleware.validate, ProductsController.changeAvatar);
 
 export default router;

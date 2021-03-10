@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, BaseEntity, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
+import { Column, Entity, BaseEntity, PrimaryGeneratedColumn, JoinColumn, OneToOne } from 'typeorm';
 import Company from './Company'
 
 @Entity('products')
@@ -21,7 +21,7 @@ export default class Product extends BaseEntity {
   @Column()
   price: number;
 
-  @ManyToOne(() => Company, company => company.products)
+  @OneToOne(() => Company)
   @JoinColumn({ name: 'company_id' })
   company: Company
 };
