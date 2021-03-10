@@ -43,7 +43,7 @@
 - [JSON Web Tokens](https://jwt.io/)
 - [UUID v4](https://www.uuidgenerator.net/version4)
 - [MySQL](https://www.mysql.com/)
-- [Docker] (https://www.docker.com/)
+- [Docker](https://www.docker.com/)
 - [TypeORM](https://typeorm.io/#/)
 
 ## 💻 Instalação, execução e desenvolvimento
