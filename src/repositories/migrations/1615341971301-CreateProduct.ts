@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import {MigrationInterface, QueryRunner, Table} from 'typeorm';
 
 export class CreateProduct1615324233747 implements MigrationInterface {
 
@@ -32,21 +32,15 @@ export class CreateProduct1615324233747 implements MigrationInterface {
           type: 'int',
           default: 1
         },
-      ],
-      foreignKeys: [
         {
-          name: 'fk_company',
-          columnNames: ['company_id'],
-          referencedTableName: 'companies',
-          referencedColumnNames: ['id'],
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
+          name: 'company_id',
+          type: 'varchar',
         }
-      ]
+      ],
     }));
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable('products');
   }
-
 }

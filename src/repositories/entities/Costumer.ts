@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import Address from './Address'
 
 @Entity('costumers')
 export default class Costumer extends BaseEntity {
@@ -19,4 +20,8 @@ export default class Costumer extends BaseEntity {
 
   @Column()
   phone?: string;
+
+	@ManyToOne(() => Address)
+	@JoinColumn({ name: 'address_id' })
+	address: Address
 };

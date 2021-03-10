@@ -10,10 +10,13 @@ export default class Product extends BaseEntity {
   title: string;
 
   @Column()
-  description: string;
+  description?: string;
 
   @Column()
   amount: number;
+
+  @Column()
+  avatar?: string;
 
   @Column()
   price: number;

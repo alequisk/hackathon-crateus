@@ -2,7 +2,7 @@ import { Column, Entity, OneToOne, ManyToOne, JoinColumn, BaseEntity, PrimaryGen
 import Order from './Order';
 import Product from './Product';
 
-@Entity()
+@Entity('product_orders')
 export default class ProductOrder extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -13,11 +13,12 @@ export default class ProductOrder extends BaseEntity {
   @Column()
   amount: number;
 
-  @ManyToOne(() => Order, order => order.prodOrder)
+  @ManyToOne(() => Order, order => order.product_order)
+  @JoinColumn({ name: 'order_id' })
   order: Order;
 
   @OneToOne(() => Product)
-  @JoinColumn()
+  @JoinColumn({ name: 'product_id' })
   product: Product;
 
 };

@@ -1,5 +1,6 @@
-import { Column, Entity, OneToMany, BaseEntity, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
+import { Column, Entity, OneToMany, BaseEntity, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from 'typeorm';
 import Product from './Product'
+import Address from './Address'
 
 @Entity('companies')
 export default class Company extends BaseEntity {
@@ -18,24 +19,19 @@ export default class Company extends BaseEntity {
 	@Column()
 	avatar?: string;
 
-	@Column()
+	@Column('text')
 	description?: string;
 
 	@Column()
 	contact: string;
 
-	@Column()
-	street?: string;
-
-	@Column()
-	district?: string;
-
-	@Column()
-	city?: string;
+	@ManyToOne(() => Address)
+	@JoinColumn({ name: 'address_id' })
+	address: Address
 
 	@OneToMany(() => Product, products => products.company, {
 		cascade: ['insert', 'update']
 	})
 	@JoinColumn({ name: 'company_id' })
-	products: Product[]
+	products?: Product[]
 };
