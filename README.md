@@ -37,7 +37,7 @@
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
 - [Express](https://expressjs.com/pt-br/)
-- [Nodemon](https://nodemon.io/)
+
 - [Prettier](https://prettier.io/)
 - [EditorConfig](https://editorconfig.org/)
 - [TypeScript](https://www.typescriptlang.org/)
