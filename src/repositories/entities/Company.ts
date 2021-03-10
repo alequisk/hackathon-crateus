@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, BaseEntity, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, OneToMany, BaseEntity, PrimaryGeneratedColumn, JoinColumn, OneToOne } from 'typeorm';
 import Product from './Product'
 import Address from './Address'
 
@@ -25,7 +25,7 @@ export default class Company extends BaseEntity {
 	@Column()
 	contact: string;
 
-	@ManyToOne(() => Address)
+	@OneToOne(() => Address)
 	@JoinColumn({ name: 'address_id' })
 	address: Address
 

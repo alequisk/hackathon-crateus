@@ -10,8 +10,6 @@ class ProductsController {
       if (title && price && amount) {
         const { id, permission } = req.body.token_data;
 
-        console.log(req.body.token_data);
-
         const product = new Product();
         const company = await Company.findOne({ id });
         

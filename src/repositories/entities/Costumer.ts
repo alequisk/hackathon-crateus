@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm';
 import Address from './Address'
 
 @Entity('costumers')
@@ -21,7 +21,8 @@ export default class Costumer extends BaseEntity {
   @Column()
   phone?: string;
 
-	@ManyToOne(() => Address)
+	@OneToOne(() => Address)
 	@JoinColumn({ name: 'address_id' })
-	address: Address
+	address: Address;
+  
 };
