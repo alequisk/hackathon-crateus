@@ -217,6 +217,12 @@ header nav img {
     padding-left: 1rem;
 }
 
+.form-login form select{
+    width: 100%;
+    height: 2rem;
+    padding-left: 1rem;
+}
+
 .form-login form a{
     background: var(--green-pantone);
     border: none;
@@ -540,4 +546,16 @@ main .container-profile .bot .meus-produtos .new-product a {
 
 .form-login .finalizar-pedido:hover {
     background: rgb(65, 190, 75);
+}
+
+.form-login .limpar-carrinho {
+    background: rgb(212, 22, 9);
+    height: 2rem;
+    font-size: 0.8rem;
+}
+
+.form-login .cancelar {
+    background: rgb(212, 22, 9);
+    height: 2rem;
+    font-size: 0.8rem;
 }
