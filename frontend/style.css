@@ -465,14 +465,79 @@ main .container-profile .bot .meus-produtos .new-product a {
     margin-left: 1rem;
 }
 
-.comercios .produto-nome .title{
-    font-size: 1.5rem;
+.compra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2%;
+    width: 40%;
+    height: 10rem;
 }
 
-.comercios .produto-nome .horario{
-    color: var(--green-pantone)
+.compra a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin-left: 1%;
+    border-bottom: solid 3px var(--green-pantone);
 }
 
-.comercios .produto-nome .frete{
-    color: var(--green-pantone)
+.compra a:hover {
+    background: var(--mint-cream);
+    transform: 1s;
+}
+
+.compra .compra-imagem img {
+    margin-top: 1rem;
+    height: 3rem;
+}
+
+.compra .compra-imagem .produto-escolhido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.compra .compra-imagem .quantidade{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.quantidade h3{
+    padding: 0 0.5rem;
+}
+
+.quantidade .mais{
+    padding: 0 0.5rem;
+}
+
+.quantidade .menos{
+    padding: 0 0.5rem;
+}
+
+.form-login .total {
+    margin-left: 30%;
+}
+
+.form-login .continuar-comprando {
+    background: rgb(8, 171, 221);
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.form-login .continuar-comprando:hover {
+    background: rgb(6, 184, 238);
+}
+
+.form-login .finalizar-pedido {
+    background: var(--green-pantone);
+}
+
+.form-login .finalizar-pedido:hover {
+    background: rgb(65, 190, 75);
 }
